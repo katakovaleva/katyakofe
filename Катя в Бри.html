@@ -1,0 +1,646 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Катя в Бри</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&family=Caveat:wght@600&display=swap">
+<style>
+/* Layout: studio-style photo mosaic hero, then centred statement, then shop (cards left / cart right), builder, cup, footer */
+:root{
+  --bg:#e7e8e5;
+  --surface:#f3f4f1;
+  --fg:#111311;
+  --muted:#6c706b;
+  --line:#cfd2cc;
+  --ink:#111311;          /* pill buttons */
+  --ink-fg:#f3f4f1;
+  --frame:#141614;        /* mosaic gaps */
+  --green:#2f6a46;
+  --green-2:#3f8a5c;
+  --coffee:#6d4632;
+  --cream:#efe2cf;
+  --gold:#c9a046;
+  --skin:#eac4a8;
+  --hair:#3a281e;
+  --font-display:"Onest","Helvetica Neue",Arial,sans-serif;
+  --font-body:"Onest","Helvetica Neue",Arial,sans-serif;
+  --font-mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+  --font-hand:"Caveat","Segoe Print","Comic Sans MS",cursive;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#141614;--surface:#1d201d;--fg:#eceee9;--muted:#9aa096;--line:#2e322d;
+  --ink:#eceee9;--ink-fg:#141614;--frame:#0b0c0b;color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#141614;--surface:#1d201d;--fg:#eceee9;--muted:#9aa096;--line:#2e322d;
+  --ink:#eceee9;--ink-fg:#141614;--frame:#0b0c0b;color-scheme:dark}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--fg);font-family:var(--font-body);font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:var(--font-display);text-wrap:balance;margin:0}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--green-2);outline-offset:3px}
+.wrap{max-width:1200px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.mono{font-family:var(--font-mono);font-size:12px;letter-spacing:.02em;color:var(--muted)}
+.pill{display:inline-flex;align-items:center;gap:10px;background:var(--ink);color:var(--ink-fg);border:0;border-radius:999px;padding:10px 20px;font-size:14px;font-weight:500;text-decoration:none;transition:transform .15s}
+.pill:hover{transform:translateY(-1px)}
+.pill .dot{width:6px;height:6px;border-radius:50%;background:currentColor}
+.pill.ghost{background:transparent;color:var(--fg);box-shadow:inset 0 0 0 1px var(--line)}
+
+/* ---------- HERO MOSAIC ---------- */
+.hero{background:var(--frame);padding:6px;position:relative;border-radius:0 0 4px 4px;overflow:hidden}
+.mosaic{display:grid;gap:6px;grid-template-columns:repeat(12,1fr);grid-template-rows:clamp(90px,14vw,170px) clamp(180px,26vw,320px) clamp(100px,15vw,180px)}
+.tile{border-radius:4px;overflow:hidden;position:relative;min-width:0}
+.t1{grid-column:1/8;background:radial-gradient(circle at 30% 120%,#3b2418 0 35%,transparent 36%),linear-gradient(135deg,#b4573a,#c76a49)}
+.t2{grid-column:8/13;background:linear-gradient(160deg,#e9c9c0,#d8a99c)}
+.t3{grid-column:1/4;background:
+  repeating-linear-gradient(90deg,rgba(0,0,0,.18) 0 2px,transparent 2px 14px),
+  repeating-linear-gradient(0deg,rgba(255,255,255,.06) 0 6px,transparent 6px 12px),
+  linear-gradient(160deg,var(--green-2),var(--green))}
+.t4{grid-column:4/10;background:linear-gradient(180deg,#b9cfd9,#d9e4e6)}
+.t5{grid-column:10/13;background:linear-gradient(180deg,#cfc6d8,#a99cb6)}
+.t6{grid-column:1/7;background:linear-gradient(180deg,#d9d4cb,#bfb6a8)}
+.t7{grid-column:7/13;background:linear-gradient(180deg,#24334a,#3a4a63)}
+.tile svg{position:absolute;inset:0;width:100%;height:100%}
+.t4 .katya{position:absolute;left:50%;bottom:0;transform:translateX(-50%);height:100%;width:auto}
+.t4 img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.upload{position:absolute;right:10px;bottom:10px;z-index:2;font-size:12px;padding:7px 12px;background:rgba(17,19,17,.78);color:#f3f4f1;border-radius:999px;border:0;backdrop-filter:blur(6px)}
+.nav{position:absolute;top:6px;left:6px;right:6px;z-index:3;display:flex;justify-content:space-between;align-items:center;padding:14px 16px 26px;color:#fff;font-size:12px;font-weight:500;background:linear-gradient(rgba(0,0,0,.32),transparent);border-radius:4px 4px 0 0;text-shadow:0 1px 2px rgba(0,0,0,.35)}
+.nav a{color:#fff;text-decoration:none;opacity:.9}
+.nav a:hover{opacity:1;text-decoration:underline}
+.nav ul{display:flex;gap:18px;list-style:none;margin:0;padding:0}
+.title{position:absolute;left:6px;right:6px;bottom:6px;z-index:2;display:flex;align-items:flex-end;justify-content:space-between;gap:2vw;padding:0 3vw;pointer-events:none;color:#f6f6f2}
+.title span{font-family:var(--font-display);font-weight:600;font-size:clamp(54px,12.5vw,168px);line-height:.78;letter-spacing:-.055em;margin-bottom:-.06em}
+.title i{flex:1;height:2px;background:currentColor;opacity:.7;margin-bottom:5vw;max-width:220px}
+.title sup{font-size:.4em;vertical-align:.95em;letter-spacing:0;margin-left:.08em}
+
+/* ---------- INTRO ---------- */
+.intro{text-align:center;padding-block:clamp(64px,10vw,120px)}
+.intro p.lead{font-size:clamp(21px,2.4vw,28px);line-height:1.25;max-width:620px;margin:18px auto 28px;letter-spacing:-.01em;text-wrap:balance}
+.logos{display:flex;justify-content:center;flex-wrap:wrap;gap:12px 36px;margin-top:64px;color:var(--muted);font-size:13px;font-weight:600}
+.logos span{display:flex;align-items:center;gap:8px}
+.logos svg{width:16px;height:16px}
+
+/* ---------- SECTION HEAD ---------- */
+.shead{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:36px}
+.shead h2{font-size:clamp(56px,10vw,128px);font-weight:600;letter-spacing:-.055em;line-height:.85}
+.shead p{max-width:340px;margin:0;color:var(--muted)}
+section{padding-block:clamp(56px,8vw,96px)}
+
+/* ---------- SHOP ---------- */
+.shop{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:28px;align-items:start}
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.card{background:var(--surface);border-radius:14px;padding:12px;display:flex;flex-direction:column;gap:10px}
+.card .pic{aspect-ratio:4/5;max-width:100%;border-radius:10px;position:relative;overflow:hidden;display:grid;place-items:center}
+.card .pic svg{width:78%;height:auto}
+.badge{position:absolute;top:10px;left:10px;background:#d6336c;color:#fff;font-size:11px;font-weight:700;border-radius:6px;padding:3px 7px}
+.badge.new{background:var(--green)}
+.like{position:absolute;top:8px;right:8px;width:34px;height:34px;border-radius:50%;border:0;background:rgba(255,255,255,.85);display:grid;place-items:center;color:#111}
+.like svg{width:18px!important;height:18px}
+.like[aria-pressed="true"] path{fill:#d6336c;stroke:#d6336c}
+.price{display:flex;align-items:baseline;gap:8px;font-variant-numeric:tabular-nums}
+.price b{font-size:22px;font-weight:700;letter-spacing:-.02em}
+.price s{color:var(--muted);font-size:13px}
+.card h3{font-size:15px;font-weight:500;line-height:1.3}
+.card h3 small{color:var(--muted);font-weight:400}
+.rating{font-size:12px;color:var(--muted);display:flex;gap:6px;align-items:center}
+.rating b{color:#e5a100}
+.buy{margin-top:auto}
+.btn-cart{width:100%;border:0;border-radius:10px;background:var(--ink);color:var(--ink-fg);padding:11px;font-weight:600;font-size:14px}
+.stepper{display:flex;align-items:center;justify-content:space-between;background:var(--bg);border-radius:10px;padding:4px}
+.stepper button{width:38px;height:36px;border:0;border-radius:8px;background:var(--surface);font-size:20px;line-height:1;font-weight:500}
+.stepper output{font-weight:700;font-variant-numeric:tabular-nums}
+.sizes{display:flex;gap:6px;flex-wrap:wrap}
+.sizes button{border:1px solid var(--line);background:transparent;border-radius:8px;padding:3px 9px;font-size:12px}
+.sizes button[aria-pressed="true"]{background:var(--ink);color:var(--ink-fg);border-color:var(--ink)}
+
+.cart{position:sticky;top:calc(env(safe-area-inset-top,0px) + 16px);background:var(--surface);border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:16px}
+.cart h3{font-size:22px;font-weight:600;letter-spacing:-.02em;display:flex;justify-content:space-between;align-items:baseline}
+.cart-list{display:flex;flex-direction:column;gap:12px;list-style:none;margin:0;padding:0}
+.cart-item{display:grid;grid-template-columns:48px minmax(0,1fr) auto;gap:10px;align-items:center}
+.cart-item .thumb{width:48px;height:48px;border-radius:8px;display:grid;place-items:center;overflow:hidden}
+.cart-item .thumb svg{width:80%;height:80%}
+.cart-item .nm{font-size:13px;line-height:1.3}
+.cart-item .nm span{display:block;color:var(--muted);font-size:12px}
+.mini{display:flex;align-items:center;gap:4px;font-variant-numeric:tabular-nums;font-size:13px;font-weight:600}
+.mini button{width:26px;height:26px;border-radius:7px;border:0;background:var(--bg)}
+.empty{color:var(--muted);font-size:14px;text-align:center;padding:18px 0;border:1px dashed var(--line);border-radius:10px}
+.totals{border-top:1px solid var(--line);padding-top:14px;display:flex;flex-direction:column;gap:6px;font-size:14px;font-variant-numeric:tabular-nums}
+.totals div{display:flex;justify-content:space-between}
+.totals .sum{font-size:20px;font-weight:700}
+.totals .disc{color:#d6336c}
+.checkout{width:100%;justify-content:center;padding:13px;font-size:15px}
+.checkout:disabled{opacity:.4;cursor:not-allowed}
+.thanks{background:var(--green);color:#fff;border-radius:10px;padding:12px 14px;font-size:14px}
+
+/* ---------- BUILDER ---------- */
+.builder{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr) minmax(0,.9fr);gap:24px;align-items:stretch}
+.ingredients{display:flex;flex-direction:column;gap:8px}
+.ing{display:flex;align-items:center;gap:12px;width:100%;text-align:left;background:var(--surface);border:1px solid transparent;border-radius:12px;padding:12px 14px;font-size:15px;font-weight:500;transition:border-color .15s,background .15s}
+.ing .ic{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;flex:none;font-size:15px;color:#fff}
+.ing .chk{margin-left:auto;width:22px;height:22px;border-radius:50%;border:1.5px solid var(--line);display:grid;place-items:center;flex:none}
+.ing[aria-pressed="true"]{border-color:var(--fg)}
+.ing[aria-pressed="true"] .chk{background:var(--fg);border-color:var(--fg)}
+.ing[aria-pressed="true"] .chk::after{content:"";width:9px;height:5px;border-left:2px solid var(--bg);border-bottom:2px solid var(--bg);transform:rotate(-45deg) translate(1px,-1px)}
+.stage{background:linear-gradient(180deg,#cfdcd2,#e9ede6);border-radius:14px;position:relative;overflow:hidden;min-height:420px;display:flex;align-items:flex-end;justify-content:center}
+.stage.bri{background:linear-gradient(180deg,#e9d6bf,#f4ebdf)}
+.stage svg.katya{width:min(100%,340px);height:auto;display:block}
+.stage .meter{position:absolute;top:14px;left:14px;right:14px;display:flex;align-items:center;gap:10px;font-family:var(--font-mono);font-size:12px;color:#2a2d29}
+.meter .bar{flex:1;height:6px;background:rgba(0,0,0,.1);border-radius:9px;overflow:hidden}
+.meter .bar i{display:block;height:100%;background:#111311;width:0;transition:width .4s cubic-bezier(.3,.7,.3,1)}
+.ready{position:absolute;top:40px;left:50%;transform:translateX(-50%);background:#111311;color:#f3f4f1;border-radius:999px;padding:6px 14px;font-size:13px;font-weight:600;white-space:nowrap}
+.layer{transition:opacity .45s ease,transform .45s ease;transform-box:fill-box;transform-origin:center}
+.layer.off{opacity:0;transform:translateY(8px) scale(.96)}
+.tag{background:#fbfaf6;color:#1b1b1b;border-radius:6px;padding:22px 20px 20px;font-family:var(--font-mono);font-size:12px;line-height:1.7;position:relative;box-shadow:0 1px 0 rgba(0,0,0,.06);align-self:start}
+.tag::before{content:"";position:absolute;top:8px;left:50%;width:10px;height:10px;margin-left:-5px;border-radius:50%;background:var(--bg);box-shadow:inset 0 0 0 1px #ccc}
+.tag h4{margin:6px 0 10px;font-size:13px;letter-spacing:.12em;text-transform:uppercase;text-align:center}
+.tag ul{list-style:none;margin:0;padding:0}
+.tag li{display:flex;justify-content:space-between;gap:10px;border-bottom:1px dotted #bbb;padding:2px 0}
+.tag .care{display:flex;gap:10px;justify-content:center;margin-top:14px;font-size:16px}
+.tag .foot{margin-top:12px;text-align:center;color:#666;font-size:11px}
+
+/* ---------- CUP ---------- */
+.cupwrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px;align-items:center}
+.cupstage{background:var(--surface);border-radius:14px;min-height:460px;display:grid;place-items:end center;padding-top:40px;overflow:hidden;position:relative}
+.cupstage svg{width:min(80%,300px);height:auto;transition:transform .4s cubic-bezier(.3,.7,.3,1);transform-origin:50% 100%}
+.steam path{stroke:var(--muted);stroke-width:4;fill:none;stroke-linecap:round;opacity:0}
+.steam.on path{animation:steam 2.6s ease-in-out infinite}
+.steam.on path:nth-child(2){animation-delay:.6s}
+.steam.on path:nth-child(3){animation-delay:1.2s}
+@keyframes steam{0%{opacity:0;transform:translateY(10px)}40%{opacity:.7}100%{opacity:0;transform:translateY(-22px)}}
+.opts{display:flex;flex-direction:column;gap:22px}
+.opts h3{font-size:clamp(32px,4vw,48px);font-weight:600;letter-spacing:-.04em;line-height:1}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips button{border:1px solid var(--line);background:transparent;border-radius:999px;padding:8px 16px;font-size:14px}
+.chips button[aria-pressed="true"]{background:var(--ink);color:var(--ink-fg);border-color:var(--ink)}
+.namefield{display:flex;flex-direction:column;gap:6px;font-size:13px;color:var(--muted)}
+.namefield input{font:inherit;font-size:16px;color:var(--fg);background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 12px;max-width:280px}
+.order-line{display:flex;align-items:center;gap:14px;flex-wrap:wrap;font-variant-numeric:tabular-nums}
+.order-line b{font-size:24px}
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translate(-50%,20px);background:var(--ink);color:var(--ink-fg);padding:10px 18px;border-radius:999px;font-size:14px;opacity:0;transition:.25s;pointer-events:none;z-index:20;white-space:nowrap}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+
+/* ---------- NOTE GAME ---------- */
+.notes{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px;align-items:center}
+.note{background:#fbf3c9;color:#2a2618;border-radius:4px;padding:34px 30px;min-height:240px;display:flex;flex-direction:column;justify-content:space-between;gap:20px;transform:rotate(-1.5deg);box-shadow:0 10px 24px rgba(0,0,0,.08);transition:transform .35s cubic-bezier(.3,.7,.3,1)}
+.note.flip{transform:rotate(1.5deg) scale(1.02)}
+.note p{font-family:var(--font-hand);font-size:clamp(28px,3.4vw,40px);line-height:1.1;margin:0;text-wrap:balance}
+.note .mono{color:#7a7258}
+.jar{display:flex;flex-direction:column;gap:18px}
+.jar .count{font-size:clamp(56px,8vw,96px);font-weight:600;letter-spacing:-.05em;line-height:.9;font-variant-numeric:tabular-nums}
+@media (max-width:900px){.notes{grid-template-columns:minmax(0,1fr)}}
+
+/* ---------- FOOTER ---------- */
+footer{padding-block:80px 40px;text-align:center}
+footer h2{font-size:clamp(48px,9vw,120px);font-weight:600;letter-spacing:-.055em;line-height:.9;margin-bottom:28px}
+footer .mono{margin-top:60px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+
+@media (max-width:900px){
+  .shop{grid-template-columns:minmax(0,1fr)}
+  .cart{position:static}
+  .builder{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+  .stage{grid-column:1/-1;grid-row:1}
+  .cupwrap{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:560px){
+  .cards{gap:10px}
+  .card{padding:8px}
+  .price b{font-size:18px}
+  .builder{grid-template-columns:minmax(0,1fr)}
+  .nav ul{gap:12px}
+  .nav li.hide-sm{display:none}
+  .mosaic{grid-template-rows:80px 220px 96px}
+  .t3,.t5{display:none}
+  .t4{grid-column:1/13}
+  .title i{display:none}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}html{scroll-behavior:auto}}
+</style>
+
+<!-- ================= HERO ================= -->
+<header class="hero" id="top">
+  <nav class="nav" aria-label="Главное меню">
+    <a href="#top">Катя ®</a>
+    <ul>
+      <li><a href="#shop">Лавка</a></li>
+      <li><a href="#build">Собрать Катю</a></li>
+      <li class="hide-sm"><a href="#bri">Бри</a></li>
+      <li class="hide-sm"><a href="#notes">Записки</a></li>
+      <li><a href="#cart">Корзина <span id="navCount">(0)</span></a></li>
+    </ul>
+  </nav>
+  <div class="mosaic">
+    <div class="tile t1" aria-hidden="true">
+      <!-- кофе сверху: латте-арт -->
+      <svg viewBox="0 0 400 160" preserveAspectRatio="xMidYMid slice"><circle cx="300" cy="130" r="110" fill="#efe2cf"/><circle cx="300" cy="130" r="96" fill="#8a5a3c"/><path d="M300 70c-30 20-34 60 0 90 34-30 30-70 0-90z" fill="#efe2cf" opacity=".9"/><path d="M300 92c-14 10-16 30 0 46 16-16 14-36 0-46z" fill="#8a5a3c"/></svg>
+    </div>
+    <div class="tile t2" aria-hidden="true">
+      <svg viewBox="0 0 300 160" preserveAspectRatio="xMidYMid slice"><path d="M60 -10 Q150 110 240 -10" fill="none" stroke="#b28a36" stroke-width="3" stroke-dasharray="2 5"/><circle cx="150" cy="100" r="44" fill="#c9a046"/><circle cx="150" cy="100" r="34" fill="none" stroke="#8d6d25" stroke-width="2"/><path d="M150 82l5 12 13 1-10 8 3 13-11-7-11 7 3-13-10-8 13-1z" fill="#8d6d25"/></svg>
+    </div>
+    <div class="tile t3" aria-hidden="true"></div>
+    <div class="tile t4" id="heroTile">
+      <div id="heroArt"></div>
+      <button class="upload" id="uploadBtn" type="button">＋ Фото Кати</button>
+      <input type="file" id="photoInput" accept="image/*" hidden>
+    </div>
+    <div class="tile t5" aria-hidden="true">
+      <svg viewBox="0 0 200 320" preserveAspectRatio="xMidYMid slice"><g transform="translate(40 70)"><path d="M10 40 L110 40 L98 210 L22 210Z" fill="#f4efe6"/><rect x="2" y="26" width="116" height="18" rx="6" fill="#2b2b2b"/><path d="M14 92 L106 92 L102 150 L18 150Z" fill="#b58a62"/><circle cx="60" cy="121" r="20" fill="#f4efe6"/><text x="60" y="127" text-anchor="middle" font-family="Onest,Arial" font-weight="800" font-size="15" fill="#6d4632">бри</text></g></svg>
+    </div>
+    <div class="tile t6" aria-hidden="true">
+      <svg viewBox="0 0 400 180" preserveAspectRatio="xMidYMid slice"><rect x="0" y="120" width="400" height="60" fill="#a8977f"/><circle cx="90" cy="70" r="8" fill="#f7e6b5"/><circle cx="210" cy="50" r="6" fill="#f7e6b5"/><circle cx="330" cy="76" r="9" fill="#f7e6b5"/></svg>
+    </div>
+    <div class="tile t7" aria-hidden="true"></div>
+  </div>
+  <div class="title" aria-hidden="true"><span>Катя</span><i></i><span>Бри<sup>®</sup></span></div>
+  <h1 class="sr" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Катя в Бри</h1>
+</header>
+
+<!-- ================= INTRO ================= -->
+<div class="wrap intro">
+  <div class="mono">( Катя ® )</div>
+  <p class="lead">Катя — человек на пересечении кофе, доброты и творчества. Сидит в Бри в зелёном свитере, с медальоном на шее, и делает этот день теплее.</p>
+  <a class="pill" href="#build"><span class="dot"></span>Собрать Катю</a>
+  <div class="logos" aria-label="Из чего сделан этот день">
+    <span><svg viewBox="0 0 16 16"><circle cx="8" cy="8" r="7" fill="currentColor"/></svg>Бри</span>
+    <span><svg viewBox="0 0 16 16"><path d="M3 5h8v5a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3z M11 6h2v3h-2" fill="currentColor"/></svg>Капучино</span>
+    <span><svg viewBox="0 0 16 16"><path d="M8 1l2 5h5l-4 3 2 6-5-4-5 4 2-6-4-3h5z" fill="currentColor"/></svg>Медальон</span>
+    <span><svg viewBox="0 0 16 16"><path d="M5 2l3 2 3-2 4 3-2 3-1-1v7H4V7L3 8 1 5z" fill="currentColor"/></svg>Зелёный свитер</span>
+    <span><svg viewBox="0 0 16 16"><path d="M8 14S1 9.5 1 5.5A3.5 3.5 0 0 1 8 4a3.5 3.5 0 0 1 7 1.5C15 9.5 8 14 8 14z" fill="currentColor"/></svg>Доброта</span>
+  </div>
+</div>
+
+<!-- ================= SHOP ================= -->
+<section class="wrap" id="shop">
+  <div class="shead">
+    <h2>Лавка<br>Кати</h2>
+    <p>Всё, из чего складывается её образ. Кладите в корзину, меняйте количество плюсом и минусом, как на маркетплейсе.</p>
+  </div>
+  <div class="shop">
+    <div class="cards" id="cards"></div>
+    <aside class="cart" id="cart" aria-live="polite">
+      <h3>Корзина <span class="mono" id="cartCount">0 товаров</span></h3>
+      <ul class="cart-list" id="cartList"></ul>
+      <div class="totals" id="totals"></div>
+      <button class="pill checkout" id="checkout" type="button"><span class="dot"></span>Оформить заказ</button>
+      <div class="thanks" id="thanks" hidden></div>
+    </aside>
+  </div>
+</section>
+
+<!-- ================= BUILDER ================= -->
+<section class="wrap" id="build">
+  <div class="shead">
+    <h2>Из чего<br>состоит Катя</h2>
+    <p>Отмечайте ингредиенты слева, и Катя соберётся по частям. Состав печатается на бирке, как на настоящем свитере.</p>
+  </div>
+  <div class="builder">
+    <div class="ingredients" id="ingredients" role="group" aria-label="Ингредиенты Кати"></div>
+    <div class="stage" id="stage">
+      <div class="meter"><span id="pct">0%</span><span class="bar"><i id="bar"></i></span><span>Катя</span></div>
+      <div class="ready" id="ready" hidden>Катя собрана ♡</div>
+      <div id="stageArt"></div>
+    </div>
+    <div class="tag" aria-live="polite">
+      <h4>Состав</h4>
+      <ul id="composition"></ul>
+      <div class="care" aria-label="Уход">☕ ♡ ✿ ☀</div>
+      <div class="foot">Обращаться бережно.<br>Не отжимать. Обнимать часто.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CUP ================= -->
+<section class="wrap" id="bri">
+  <div class="shead">
+    <h2>Кофе<br>в Бри</h2>
+    <p>Любимый стакан Кати. Выберите напиток и размер, бариста подпишет имя маркером.</p>
+  </div>
+  <div class="cupwrap">
+    <div class="cupstage">
+      <svg viewBox="0 0 240 340" id="cupSvg" aria-label="Стаканчик кофейни Бри">
+        <g class="steam" id="steam"><path d="M90 60c-10-14 10-22 0-38"/><path d="M120 56c-10-14 10-22 0-38"/><path d="M150 60c-10-14 10-22 0-38"/></g>
+        <path d="M44 100 L196 100 L176 330 L64 330Z" fill="#f6f1e7"/>
+        <path d="M44 100 L196 100 L194 116 L46 116Z" fill="#e9e1d1"/>
+        <rect x="34" y="78" width="172" height="26" rx="9" fill="#262626"/>
+        <path d="M60 72 Q120 54 180 72 L184 80 L56 80Z" fill="#333"/>
+        <path d="M52 168 L188 168 L182 246 L58 246Z" fill="#b58a62"/>
+        <circle cx="120" cy="207" r="30" fill="#f6f1e7"/>
+        <text x="120" y="214" text-anchor="middle" font-family="Onest,Arial" font-weight="800" font-size="21" fill="#6d4632" letter-spacing="-1">бри</text>
+        <text x="120" y="228" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="6" fill="#6d4632" letter-spacing="1">КОФЕЙНЯ</text>
+        <text id="cupName" x="120" y="150" text-anchor="middle" font-family="Caveat,cursive" font-size="34" fill="#2a3fa0" transform="rotate(-6 120 150)">Катя ♡</text>
+        <text id="cupDrink" x="120" y="290" text-anchor="middle" font-family="Caveat,cursive" font-size="22" fill="#2a3fa0">капучино · M</text>
+      </svg>
+    </div>
+    <div class="opts">
+      <h3 id="cupTitle">Капучино, M</h3>
+      <div>
+        <div class="mono" style="margin-bottom:8px">Напиток</div>
+        <div class="chips" id="drinks"></div>
+      </div>
+      <div>
+        <div class="mono" style="margin-bottom:8px">Размер</div>
+        <div class="chips" id="sizes"></div>
+      </div>
+      <label class="namefield" for="nameInput">Имя на стакане
+        <input id="nameInput" type="text" maxlength="14" value="Катя ♡">
+      </label>
+      <div class="order-line">
+        <b id="cupPrice">290 ₽</b>
+        <button class="pill" id="pour" type="button"><span class="dot"></span>Сварить</button>
+        <button class="pill ghost" id="cupToCart" type="button">В корзину</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="wrap" id="notes">
+  <div class="shead">
+    <h2>Записка<br>из Бри</h2>
+    <p>Бариста Бри прячет под крышкой стаканчика записки для Кати. Тяните по одной, их хватит на каждый день.</p>
+  </div>
+  <div class="notes">
+    <div class="note" id="note" aria-live="polite">
+      <span class="mono" id="noteNo">Записка № 1</span>
+      <p id="noteText">Катя, рядом с тобой даже понедельник пахнет капучино.</p>
+      <span class="mono">— бариста Бри</span>
+    </div>
+    <div class="jar">
+      <div class="mono">Тёплых слов собрано</div>
+      <div class="count" id="noteCount">1 / 12</div>
+      <div><button class="pill" id="noteBtn" type="button"><span class="dot"></span>Вытянуть записку</button></div>
+    </div>
+  </div>
+</section>
+
+<footer class="wrap">
+  <div class="mono">( Спасибо )</div>
+  <h2>Катя, ты<br>наш лучший<br>человек</h2>
+  <a class="pill" href="#top"><span class="dot"></span>Наверх</a>
+  <div class="mono"><span>Прототип · сделано с любовью</span><span>Бри, 2026</span></div>
+</footer>
+
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+(function(){
+  const $ = s => document.querySelector(s);
+  const fmt = n => n.toLocaleString('ru-RU') + ' ₽';
+  const store = {
+    get(k,d){try{const v=localStorage.getItem(k);return v?JSON.parse(v):d}catch(e){return d}},
+    set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}
+  };
+  const toast = msg => {const t=$('#toast');t.textContent=msg;t.classList.add('show');clearTimeout(t._h);t._h=setTimeout(()=>t.classList.remove('show'),1800)};
+
+  /* ---------- Иллюстрация Кати (слои включаются по ингредиентам) ---------- */
+  function katyaSVG(on, cls){
+    const L = k => 'layer' + (on[k] ? '' : ' off');
+    return `<svg class="katya ${cls||''}" viewBox="0 0 300 360" role="img" aria-label="Иллюстрация Кати">
+      <defs>
+        <pattern id="knit${cls}" width="12" height="12" patternUnits="userSpaceOnUse">
+          <rect width="12" height="12" fill="#2f6a46"/>
+          <path d="M0 0 L6 8 L12 0 M0 6 L6 14 L12 6" fill="none" stroke="#3f8a5c" stroke-width="2"/>
+        </pattern>
+      </defs>
+      <g class="${L('bri')}"><circle cx="150" cy="150" r="128" fill="#d9b994" opacity=".55"/>
+        <text x="150" y="58" text-anchor="middle" font-family="Onest,Arial" font-weight="800" font-size="20" fill="#6d4632" opacity=".7">бри</text></g>
+      <path d="M95 140 C 88 62, 212 62, 205 140 L 214 250 L 86 250 Z" fill="#3a281e"/>
+      <rect x="134" y="170" width="32" height="48" fill="#e2b597"/>
+      <path d="M50 360 C 52 262, 96 214, 150 212 C 204 214, 248 262, 250 360 Z" fill="#c9ccc6" stroke="#9aa096" stroke-width="2" stroke-dasharray="5 5"/>
+      <g class="${L('tee')}"><path d="M50 360 C 52 262, 96 214, 150 212 C 204 214, 248 262, 250 360 Z" fill="#1a1a1a"/>
+        <path d="M128 214 Q150 236 172 214" fill="none" stroke="#333" stroke-width="4"/></g>
+      <g class="${L('sweater')}"><path d="M44 360 C 46 258, 92 208, 150 206 C 208 208, 254 258, 256 360 Z" fill="url(#knit${cls})"/>
+        <path d="M120 210 Q150 238 180 210 L176 202 Q150 226 124 202Z" fill="#245638"/>
+        <path d="M44 340 L256 340" stroke="#245638" stroke-width="10"/></g>
+      <ellipse cx="150" cy="135" rx="47" ry="55" fill="#eac4a8"/>
+      <path d="M101 128 C 102 78, 198 74, 199 128 C 178 98, 128 96, 101 128Z" fill="#3a281e"/>
+      <path d="M124 140 q8 -7 16 0 M160 140 q8 -7 16 0" fill="none" stroke="#3a281e" stroke-width="3" stroke-linecap="round"/>
+      <circle cx="122" cy="156" r="8" fill="#e99c8f" opacity=".55"/><circle cx="178" cy="156" r="8" fill="#e99c8f" opacity=".55"/>
+      <path d="M136 164 q14 12 28 0" fill="none" stroke="#9b3f3a" stroke-width="3" stroke-linecap="round"/>
+      <g class="${L('medal')}"><path d="M128 206 Q150 262 172 206" fill="none" stroke="#c9a046" stroke-width="2.5" stroke-dasharray="1 4" stroke-linecap="round"/>
+        <circle cx="150" cy="262" r="17" fill="#c9a046"/><circle cx="150" cy="262" r="12" fill="none" stroke="#8d6d25" stroke-width="1.5"/>
+        <path d="M150 254l2.5 5.5 6 .5-4.5 4 1.5 6-5.5-3.3-5.5 3.3 1.5-6-4.5-4 6-.5z" fill="#8d6d25"/></g>
+      <g class="${L('coffee')}"><path d="M196 282 L236 282 L232 334 L200 334Z" fill="#f6f1e7"/><rect x="192" y="274" width="48" height="10" rx="4" fill="#262626"/>
+        <circle cx="216" cy="308" r="10" fill="#b58a62"/><text x="216" y="311" text-anchor="middle" font-family="Onest,Arial" font-weight="800" font-size="7" fill="#f6f1e7">бри</text>
+        <path d="M186 330 Q200 300 214 330" fill="#eac4a8"/>
+        <path d="M208 266c-5-8 5-12 0-20 M222 266c-5-8 5-12 0-20" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" opacity=".8"/></g>
+      <g class="${L('kind')}" fill="#e05b7f"><path d="M60 120c-6-8-18-2-12 8l12 10 12-10c6-10-6-16-12-8z"/><path d="M244 96c-4-6-13-1-9 6l9 7 9-7c4-7-5-12-9-6z"/><path d="M252 190c-3-5-10-1-7 5l7 5 7-5c3-6-4-10-7-5z"/></g>
+      <g class="${L('creative')}"><path d="M70 60l4 10 10 4-10 4-4 10-4-10-10-4 10-4z" fill="#f2b632"/><path d="M232 40l3 7 7 3-7 3-3 7-3-7-7-3 7-3z" fill="#5b8def"/>
+        <path d="M44 200 q16 -18 34 -4" fill="none" stroke="#f2b632" stroke-width="6" stroke-linecap="round"/><path d="M226 150 q16 -14 30 0" fill="none" stroke="#5b8def" stroke-width="6" stroke-linecap="round"/></g>
+    </svg>`;
+  }
+
+  /* ---------- Иллюстрации товаров ---------- */
+  const art = {
+    sweater:`<svg viewBox="0 0 120 120"><defs><pattern id="pk" width="8" height="8" patternUnits="userSpaceOnUse"><rect width="8" height="8" fill="#2f6a46"/><path d="M0 0L4 6L8 0" fill="none" stroke="#3f8a5c" stroke-width="1.6"/></pattern></defs><path d="M40 14 Q60 26 80 14 L106 30 L98 58 L88 54 L88 108 L32 108 L32 54 L22 58 L14 30Z" fill="url(#pk)"/><path d="M44 14 Q60 30 76 14" fill="none" stroke="#245638" stroke-width="5"/><rect x="32" y="100" width="56" height="8" fill="#245638"/></svg>`,
+    medal:`<svg viewBox="0 0 120 120"><path d="M30 6 Q60 80 90 6" fill="none" stroke="#b28a36" stroke-width="2.5" stroke-dasharray="1 4" stroke-linecap="round"/><circle cx="60" cy="80" r="26" fill="#c9a046"/><circle cx="60" cy="80" r="19" fill="none" stroke="#8d6d25" stroke-width="2"/><path d="M60 67l4 8.5 9 1-7 6 2.2 9-8.2-5-8.2 5 2.2-9-7-6 9-1z" fill="#8d6d25"/><rect x="56" y="50" width="8" height="6" rx="2" fill="#b28a36"/></svg>`,
+    tee:`<svg viewBox="0 0 120 120"><path d="M42 16 Q60 28 78 16 L106 32 L96 52 L86 46 L86 108 L34 108 L34 46 L24 52 L14 32Z" fill="#161616"/><path d="M46 16 Q60 28 74 16" fill="none" stroke="#333" stroke-width="4"/><text x="60" y="76" text-anchor="middle" font-family="Onest,Arial" font-weight="700" font-size="11" fill="#e7e8e5">КАТЯ®</text></svg>`,
+    cup:`<svg viewBox="0 0 120 120"><path d="M30 30 L90 30 L82 112 L38 112Z" fill="#f6f1e7"/><rect x="26" y="22" width="68" height="11" rx="4" fill="#262626"/><path d="M33 56 L87 56 L84 86 L36 86Z" fill="#b58a62"/><circle cx="60" cy="71" r="12" fill="#f6f1e7"/><text x="60" y="74.5" text-anchor="middle" font-family="Onest,Arial" font-weight="800" font-size="9" fill="#6d4632">бри</text></svg>`
+  };
+  const products = [
+    {id:'sweater',name:'Зелёный свитер Кати',sub:'шерсть, оверсайз',price:4290,old:5990,bg:'#dfe8df',badge:'−28%',rating:'4.9 · 312 оценок',sizes:['XS','S','M','L']},
+    {id:'medal',name:'Медальон «Звезда»',sub:'латунь, позолота',price:2490,old:null,bg:'#efe6d3',badge:'Хит',rating:'5.0 · 128 оценок'},
+    {id:'tee',name:'Чёрная футболка',sub:'хлопок 100%',price:1590,old:1990,bg:'#dcdcdc',badge:'−20%',rating:'4.8 · 540 оценок',sizes:['S','M','L','XL']},
+    {id:'cup',name:'Капучино из Бри',sub:'для Кати, M',price:290,old:null,bg:'#efe2cf',badge:'Новинка',badgeNew:true,rating:'5.0 · 999+ оценок'}
+  ];
+  const byId = Object.fromEntries(products.map(p=>[p.id,p]));
+
+  /* ---------- Корзина ---------- */
+  let cart = store.get('katya-cart', {sweater:1}); // пример: один свитер уже в корзине
+  const sizeSel = store.get('katya-sizes', {sweater:'S',tee:'M'});
+  let cupLine = store.get('katya-cupline', null); // название кофе в корзине
+  const likes = new Set(store.get('katya-likes', []));
+
+  function setQty(id,q){
+    q=Math.max(0,Math.min(9,q));
+    if(q===0) delete cart[id]; else cart[id]=q;
+    store.set('katya-cart',cart);
+    $('#thanks').hidden=true;
+    renderCards(); renderCart();
+  }
+
+  function renderCards(){
+    $('#cards').innerHTML = products.map(p=>{
+      const q=cart[p.id]||0;
+      return `<article class="card">
+        <div class="pic" style="background:${p.bg}">
+          ${p.badge?`<span class="badge ${p.badgeNew?'new':''}">${p.badge}</span>`:''}
+          <button class="like" type="button" data-like="${p.id}" aria-pressed="${likes.has(p.id)}" aria-label="В избранное"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-9.5A3.8 3.8 0 0 1 12 8a3.8 3.8 0 0 1 7 2.5C19 15.6 12 20 12 20z" fill="none" stroke="#111" stroke-width="1.8"/></svg></button>
+          ${art[p.id]}
+        </div>
+        <div class="price"><b>${fmt(p.price)}</b>${p.old?`<s>${fmt(p.old)}</s>`:''}</div>
+        <h3>${p.name} <small>/ ${p.sub}</small></h3>
+        <div class="rating"><b>★</b>${p.rating}</div>
+        ${p.sizes?`<div class="sizes" role="group" aria-label="Размер">${p.sizes.map(s=>`<button type="button" data-size="${p.id}:${s}" aria-pressed="${sizeSel[p.id]===s}">${s}</button>`).join('')}</div>`:''}
+        <div class="buy">${q?`<div class="stepper"><button type="button" data-dec="${p.id}" aria-label="Убрать одну">−</button><output aria-live="polite">${q} шт</output><button type="button" data-inc="${p.id}" aria-label="Добавить ещё">+</button></div>`
+          :`<button class="btn-cart" type="button" data-inc="${p.id}">В корзину</button>`}</div>
+      </article>`}).join('');
+  }
+
+  function renderCart(){
+    const ids=Object.keys(cart);
+    const count=ids.reduce((s,id)=>s+cart[id],0);
+    const word = n=>{const a=n%10,b=n%100;return (a===1&&b!==11)?'товар':(a>=2&&a<=4&&(b<10||b>=20))?'товара':'товаров'};
+    $('#cartCount').textContent=`${count} ${word(count)}`;
+    $('#navCount').textContent=`(${count})`;
+    if(!ids.length){
+      $('#cartList').innerHTML=`<li class="empty">Пока пусто. Начните со свитера ♡</li>`;
+    } else {
+      $('#cartList').innerHTML=ids.map(id=>{const p=byId[id];
+        const sub = id==='cup' && cupLine ? cupLine : (p.sizes? 'размер '+sizeSel[id] : p.sub);
+        return `<li class="cart-item"><div class="thumb" style="background:${p.bg}">${art[id]}</div>
+        <div class="nm">${p.name}<span>${sub} · ${fmt(p.price*cart[id])}</span></div>
+        <div class="mini"><button type="button" data-dec="${id}" aria-label="Меньше">−</button>${cart[id]}<button type="button" data-inc="${id}" aria-label="Больше">+</button></div></li>`}).join('');
+    }
+    const sum=ids.reduce((s,id)=>s+byId[id].price*cart[id],0);
+    const old=ids.reduce((s,id)=>s+(byId[id].old||byId[id].price)*cart[id],0);
+    $('#totals').innerHTML=`<div><span>Товары, ${count} шт</span><span>${fmt(old)}</span></div>
+      ${old>sum?`<div class="disc"><span>Скидка</span><span>−${fmt(old-sum)}</span></div>`:''}
+      <div><span>Доставка в Бри</span><span>бесплатно</span></div>
+      <div class="sum"><span>Итого</span><span>${fmt(sum)}</span></div>`;
+    $('#checkout').disabled=!ids.length;
+  }
+
+  document.addEventListener('click',e=>{
+    const t=e.target.closest('button'); if(!t) return;
+    if(t.dataset.inc){const id=t.dataset.inc;const was=cart[id]||0;setQty(id,was+1);if(!was)toast('Добавлено в корзину');}
+    else if(t.dataset.dec){setQty(t.dataset.dec,(cart[t.dataset.dec]||0)-1);}
+    else if(t.dataset.size){const [id,s]=t.dataset.size.split(':');sizeSel[id]=s;store.set('katya-sizes',sizeSel);renderCards();renderCart();}
+    else if(t.dataset.like){const id=t.dataset.like;likes.has(id)?likes.delete(id):likes.add(id);store.set('katya-likes',[...likes]);t.setAttribute('aria-pressed',likes.has(id));if(likes.has(id))toast('В избранном');}
+  });
+  $('#checkout').addEventListener('click',()=>{
+    const n=Object.values(cart).reduce((a,b)=>a+b,0); if(!n) return;
+    cart={}; store.set('katya-cart',cart); renderCards(); renderCart();
+    const th=$('#thanks'); th.hidden=false;
+    th.textContent='Заказ оформлен. Это прототип, так что Катя просто улыбнулась и заказала ещё капучино.';
+  });
+
+  /* ---------- Собери Катю ---------- */
+  const ingredients=[
+    {k:'coffee',name:'Кофе',pct:30,ic:'☕',c:'#6d4632'},
+    {k:'kind',name:'Доброта',pct:25,ic:'♡',c:'#e05b7f'},
+    {k:'creative',name:'Креативность',pct:20,ic:'✦',c:'#5b8def'},
+    {k:'sweater',name:'Зелёный свитер',pct:10,ic:'≋',c:'#2f6a46'},
+    {k:'medal',name:'Медальон',pct:8,ic:'★',c:'#c9a046'},
+    {k:'tee',name:'Чёрная футболка',pct:4,ic:'▪',c:'#1a1a1a'},
+    {k:'bri',name:'Уют Бри',pct:3,ic:'б',c:'#b58a62'}
+  ];
+  const built = store.get('katya-built',{coffee:true,sweater:true,kind:true}); // стартует наполовину собранной
+  function renderBuilder(){
+    $('#ingredients').innerHTML=ingredients.map(i=>`<button class="ing" type="button" data-ing="${i.k}" aria-pressed="${!!built[i.k]}"><span class="ic" style="background:${i.c}">${i.ic}</span>${i.name}<span class="chk"></span></button>`).join('');
+    $('#stageArt').innerHTML=katyaSVG(built,'b');
+    const pct=ingredients.reduce((s,i)=>s+(built[i.k]?i.pct:0),0);
+    $('#pct').textContent=pct+'%'; $('#bar').style.width=pct+'%';
+    $('#ready').hidden=pct<100;
+    $('#stage').classList.toggle('bri',!!built.bri);
+    const on=ingredients.filter(i=>built[i.k]);
+    $('#composition').innerHTML=on.length?on.map(i=>`<li><span>${i.name}</span><span>${i.pct}%</span></li>`).join(''):'<li><span>Пока ничего</span><span>0%</span></li>';
+  }
+  $('#ingredients').addEventListener('click',e=>{
+    const b=e.target.closest('[data-ing]'); if(!b) return;
+    const k=b.dataset.ing; built[k]=!built[k]; store.set('katya-built',built);
+    // обновляем только слои, чтобы сработала анимация
+    b.setAttribute('aria-pressed',!!built[k]);
+    const svg=$('#stageArt svg');
+    renderLayersOnly(svg);
+  });
+  function renderLayersOnly(){
+    const tmp=document.createElement('div'); tmp.innerHTML=katyaSVG(built,'b');
+    const newLayers=tmp.querySelectorAll('.layer'); const cur=$('#stageArt').querySelectorAll('.layer');
+    cur.forEach((g,i)=>g.setAttribute('class',newLayers[i].getAttribute('class')));
+    const pct=ingredients.reduce((s,i)=>s+(built[i.k]?i.pct:0),0);
+    $('#pct').textContent=pct+'%'; $('#bar').style.width=pct+'%';
+    $('#ready').hidden=pct<100; if(pct===100) toast('Катя собрана полностью ♡');
+    $('#stage').classList.toggle('bri',!!built.bri);
+    const on=ingredients.filter(i=>built[i.k]);
+    $('#composition').innerHTML=on.length?on.map(i=>`<li><span>${i.name}</span><span>${i.pct}%</span></li>`).join(''):'<li><span>Пока ничего</span><span>0%</span></li>';
+  }
+
+  /* ---------- Герой ---------- */
+  const all={coffee:true,sweater:true,medal:true,kind:true,creative:true,bri:false,tee:false};
+  function renderHero(){
+    const photo=store.get('katya-photo',null);
+    $('#heroArt').innerHTML = photo ? `<img src="${photo}" alt="Катя">` : katyaSVG(all,'h');
+    $('#uploadBtn').textContent = photo ? 'Сменить фото' : '＋ Фото Кати';
+  }
+  $('#uploadBtn').addEventListener('click',()=>$('#photoInput').click());
+  $('#photoInput').addEventListener('change',e=>{
+    const f=e.target.files[0]; if(!f) return;
+    const r=new FileReader();
+    r.onload=()=>{
+      // уменьшаем фото, чтобы оно поместилось в память браузера
+      const img=new Image(); img.onload=()=>{
+        const s=Math.min(1,1400/Math.max(img.width,img.height));
+        const c=document.createElement('canvas'); c.width=img.width*s; c.height=img.height*s;
+        c.getContext('2d').drawImage(img,0,0,c.width,c.height);
+        const url=c.toDataURL('image/jpeg',.85);
+        store.set('katya-photo',url);
+        $('#heroArt').innerHTML=`<img src="${url}" alt="Катя">`; $('#uploadBtn').textContent='Сменить фото';
+        toast('Фото на месте');
+      }; img.src=r.result;
+    };
+    r.readAsDataURL(f);
+  });
+
+  /* ---------- Стаканчик Бри ---------- */
+  const drinks=[{n:'Капучино',p:290},{n:'Латте',p:310},{n:'Раф',p:340},{n:'Флэт уайт',p:320},{n:'Какао',p:280}];
+  const sizes=[{n:'S',k:.85,add:-40},{n:'M',k:1,add:0},{n:'L',k:1.12,add:60}];
+  let cup={d:0,s:1};
+  function renderCup(){
+    $('#drinks').innerHTML=drinks.map((d,i)=>`<button type="button" data-drink="${i}" aria-pressed="${cup.d===i}">${d.n}</button>`).join('');
+    $('#sizes').innerHTML=sizes.map((s,i)=>`<button type="button" data-csize="${i}" aria-pressed="${cup.s===i}">${s.n}</button>`).join('');
+    const d=drinks[cup.d], s=sizes[cup.s], price=d.p+s.add;
+    $('#cupTitle').textContent=`${d.n}, ${s.n}`;
+    $('#cupDrink').textContent=`${d.n.toLowerCase()} · ${s.n}`;
+    $('#cupPrice').textContent=fmt(price);
+    $('#cupSvg').style.transform=`scale(${s.k})`;
+    byId.cup.price=price;
+  }
+  document.addEventListener('click',e=>{
+    const b=e.target.closest('[data-drink],[data-csize]'); if(!b) return;
+    if(b.dataset.drink) cup.d=+b.dataset.drink; else cup.s=+b.dataset.csize;
+    renderCup(); renderCart();
+  });
+  $('#nameInput').addEventListener('input',e=>{$('#cupName').textContent=e.target.value||' '});
+  $('#pour').addEventListener('click',()=>{
+    const st=$('#steam'); st.classList.remove('on'); void st.getBBox(); st.classList.add('on');
+    toast(`${drinks[cup.d].n} готов, бариста зовёт: «${$('#nameInput').value||'Катя'}!»`);
+  });
+  $('#cupToCart').addEventListener('click',()=>{
+    cupLine=`${drinks[cup.d].n.toLowerCase()}, ${sizes[cup.s].n}`; store.set('katya-cupline',cupLine);
+    setQty('cup',(cart.cup||0)+1); toast('Кофе в корзине');
+  });
+
+  /* ---------- Записки ---------- */
+  const notes=[
+    'Катя, рядом с тобой даже понедельник пахнет капучино.',
+    'Зелёный свитер тебе к лицу. Как и хорошее настроение.',
+    'Ты умеешь делать красиво всё, к чему прикасаешься.',
+    'Медальон блестит, но ты всё равно ярче.',
+    'Спасибо, что ты такая добрая. Это редкость.',
+    'Сегодня отличный день, чтобы придумать что-то новое.',
+    'Твой кофе уже ждёт, а мы ждём тебя.',
+    'С тобой уютно, как в Бри в дождливый вечер.',
+    'Креативность у тебя в крови. Вместе с кофеином.',
+    'Ты делаешь людей вокруг немного счастливее.',
+    'Ещё одна чашка, и мир станет совсем хорошим.',
+    'Катя, ты наш лучший человек. Это официально.'
+  ];
+  let seen=new Set([0]), cur=0;
+  $('#noteBtn').addEventListener('click',()=>{
+    let left=notes.map((_,i)=>i).filter(i=>!seen.has(i));
+    if(!left.length){seen=new Set();left=notes.map((_,i)=>i).filter(i=>i!==cur);}
+    cur=left[Math.floor(Math.random()*left.length)]; seen.add(cur);
+    const n=$('#note'); n.classList.toggle('flip');
+    $('#noteText').textContent=notes[cur];
+    $('#noteNo').textContent='Записка № '+(cur+1);
+    $('#noteCount').textContent=seen.size+' / '+notes.length;
+    if(seen.size===notes.length) toast('Все записки собраны ♡');
+  });
+
+  renderHero(); renderCards(); renderCart(); renderBuilder(); renderCup();
+  // если кофе в корзине выбран иначе — цена совпадает с выбором на стакане
+  $('#steam').classList.add('on');
+})();
+</script>
+
+</body></html>
